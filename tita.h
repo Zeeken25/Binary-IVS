@@ -7,7 +7,7 @@ typedef struct
 {
     char name[16];
     char desc[64];
-    struct tm time;
+    struct tm time;//Hej
 
 } T_data;
 
