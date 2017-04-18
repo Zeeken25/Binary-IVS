@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'calc_02_des02.ui'
+# Form implementation generated from reading ui file 'calc.ui'
 #
 # Created by: PyQt5 UI code generator 5.6
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import math_lib
-
+from PyQt5.QtGui import QPixmap
 
 class Ui_Calculator(object):
     def setupUi(self, Calculator):
@@ -18,26 +17,15 @@ class Ui_Calculator(object):
         self.centralwidget.setMouseTracking(False)
         self.centralwidget.setAutoFillBackground(True)
         self.centralwidget.setObjectName("centralwidget")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.gridLayout_3 = QtWidgets.QGridLayout()
-        self.gridLayout_3.setObjectName("gridLayout_3")
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_3.addItem(spacerItem, 2, 2, 1, 1)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_3.addItem(spacerItem1, 3, 1, 1, 1)
-        spacerItem2 = QtWidgets.QSpacerItem(80, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_3.addItem(spacerItem2, 2, 0, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_3.addItem(spacerItem3, 0, 1, 1, 1)
-        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setObjectName("label")
-        self.verticalLayout.addWidget(self.label)
-        self.gridLayout_3.addLayout(self.verticalLayout, 0, 0, 1, 1)
+        self.gridLayout_2 = QtWidgets.QGridLayout()
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        spacerItem = QtWidgets.QSpacerItem(20, 43, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_2.addItem(spacerItem, 4, 1, 1, 1)
         self.calcDisplay = QtWidgets.QLabel(self.centralwidget)
         self.calcDisplay.setEnabled(True)
+        self.calcDisplay.setMaximumSize(QtCore.QSize(1024, 16777215))
         font = QtGui.QFont()
         font.setFamily("Calibri Light")
         font.setPointSize(16)
@@ -52,17 +40,50 @@ class Ui_Calculator(object):
         self.calcDisplay.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.calcDisplay.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.calcDisplay.setLineWidth(2)
+        self.calcDisplay.setTextFormat(QtCore.Qt.RichText)
         self.calcDisplay.setScaledContents(True)
         self.calcDisplay.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.calcDisplay.setWordWrap(False)
         self.calcDisplay.setObjectName("calcDisplay")
-        self.gridLayout_3.addWidget(self.calcDisplay, 2, 1, 1, 1, QtCore.Qt.AlignVCenter)
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setObjectName("label_2")
-        self.gridLayout_3.addWidget(self.label_2, 3, 0, 1, 1)
-        self.verticalLayout_2.addLayout(self.gridLayout_3)
-        spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        self.verticalLayout_2.addItem(spacerItem4)
+        self.gridLayout_2.addWidget(self.calcDisplay, 3, 1, 1, 1)
+        spacerItem1 = QtWidgets.QSpacerItem(80, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_2.addItem(spacerItem1, 3, 0, 1, 1)
+        self.calcDisplayRes = QtWidgets.QLabel(self.centralwidget)
+        self.calcDisplayRes.setEnabled(True)
+        self.calcDisplayRes.setMaximumSize(QtCore.QSize(1024, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("Calibri Light")
+        font.setPointSize(16)
+        font.setBold(False)
+        font.setWeight(50)
+        font.setStrikeOut(False)
+        font.setKerning(True)
+        font.setStyleStrategy(QtGui.QFont.PreferDefault)
+        self.calcDisplayRes.setFont(font)
+        self.calcDisplayRes.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.calcDisplayRes.setAutoFillBackground(True)
+        self.calcDisplayRes.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.calcDisplayRes.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.calcDisplayRes.setLineWidth(2)
+        self.calcDisplayRes.setTextFormat(QtCore.Qt.RichText)
+        self.calcDisplayRes.setScaledContents(True)
+        self.calcDisplayRes.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.calcDisplayRes.setWordWrap(False)
+        self.calcDisplayRes.setObjectName("calcDisplayRes")
+        self.gridLayout_2.addWidget(self.calcDisplayRes, 2, 1, 1, 1)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_2.addItem(spacerItem2, 3, 2, 1, 1)
+        self.Logo = QtWidgets.QLabel(self.centralwidget)
+        self.Logo.setObjectName("Logo")
+        self.gridLayout_2.addWidget(self.Logo, 0, 0, 1, 1)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 28, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_2.addItem(spacerItem3, 0, 1, 1, 1)
+        self.verticalLayout.addLayout(self.gridLayout_2)
+        self.line = QtWidgets.QFrame(self.centralwidget)
+        self.line.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName("line")
+        self.verticalLayout.addWidget(self.line)
         self.gridLayout = QtWidgets.QGridLayout()
         self.gridLayout.setContentsMargins(9, -1, -1, -1)
         self.gridLayout.setHorizontalSpacing(25)
@@ -93,13 +114,13 @@ class Ui_Calculator(object):
         self.btn4 = QtWidgets.QPushButton(self.centralwidget)
         self.btn4.setObjectName("btn4")
         self.gridLayout.addWidget(self.btn4, 4, 1, 1, 1)
-        spacerItem5 = QtWidgets.QSpacerItem(25, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem5, 6, 0, 1, 1)
+        spacerItem4 = QtWidgets.QSpacerItem(25, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem4, 6, 0, 1, 1)
         self.btn3 = QtWidgets.QPushButton(self.centralwidget)
         self.btn3.setObjectName("btn3")
         self.gridLayout.addWidget(self.btn3, 5, 3, 1, 1)
-        spacerItem6 = QtWidgets.QSpacerItem(25, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem6, 6, 5, 1, 1)
+        spacerItem5 = QtWidgets.QSpacerItem(25, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem5, 6, 5, 1, 1)
         self.btn8 = QtWidgets.QPushButton(self.centralwidget)
         self.btn8.setObjectName("btn8")
         self.gridLayout.addWidget(self.btn8, 3, 2, 1, 1)
@@ -145,7 +166,7 @@ class Ui_Calculator(object):
         self.btnDelete = QtWidgets.QPushButton(self.centralwidget)
         self.btnDelete.setObjectName("btnDelete")
         self.gridLayout.addWidget(self.btnDelete, 1, 1, 1, 1)
-        self.verticalLayout_2.addLayout(self.gridLayout)
+        self.verticalLayout.addLayout(self.gridLayout)
         Calculator.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Calculator)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 549, 21))
@@ -158,9 +179,14 @@ class Ui_Calculator(object):
         Calculator.setStatusBar(self.statusbar)
         self.actionPolozka1 = QtWidgets.QAction(Calculator)
         self.actionPolozka1.setObjectName("actionPolozka1")
+        self.actionAuto_i = QtWidgets.QAction(Calculator)
+        self.actionAuto_i.setObjectName("actionAuto_i")
         self.menuMenu.addAction(self.actionPolozka1)
+        self.menuMenu.addAction(self.actionAuto_i)
         self.menubar.addAction(self.menuMenu.menuAction())
 
+        #after pressing one of the number buttons their respective number will be appended
+        #to the end of the string to be shown and parsed
         self.btn0.clicked.connect(lambda: self.setStr('0'))
         self.btn1.clicked.connect(lambda: self.setStr('1'))
         self.btn2.clicked.connect(lambda: self.setStr('2'))
@@ -172,6 +198,8 @@ class Ui_Calculator(object):
         self.btn8.clicked.connect(lambda: self.setStr('8'))
         self.btn9.clicked.connect(lambda: self.setStr('9'))
 
+        #After pressing the operation button their respective symbol will be appended at the end of
+        #the string to be shown and parsed
         self.btnPlus.clicked.connect(lambda: self.setStr('+'))
         self.btnMinus.clicked.connect(lambda: self.setStr('-'))
         self.btnMult.clicked.connect(lambda: self.setStr('*'))
@@ -181,26 +209,29 @@ class Ui_Calculator(object):
         self.btnExpon.clicked.connect(lambda: self.setStr('^'))
         self.btnPoint.clicked.connect(lambda: self.setStr('.'))
 
-        self.btnNeg.clicked.connect(self.negate)
-        self.btnBackspace.clicked.connect(self.backSpace)
-        self.btnDelete.clicked.connect(self.deleteList)
-        self.btnReset.clicked.connect(self.resetList)
 
-        self.btnEq.clicked.connect(self.calculate)
+        #clicking the operation buttons will call their function
+        self.btnNeg.clicked.connect(self.negate) #appends "-" at the start of the string
+        self.btnBackspace.clicked.connect(self.backSpace) #removes the last entered value
+        self.btnDelete.clicked.connect(self.deleteList) #deletes the last entered input
+        self.btnReset.clicked.connect(self.resetList) #resets the entire calculation
+
+        self.btnEq.clicked.connect(self.calculate) #calls the parser to calculate value of expression
 
         self.retranslateUi(Calculator)
         QtCore.QMetaObject.connectSlotsByName(Calculator)
 
-        self.listToParse = list()
-        self.lastRes = list
+        self.listToParse = list() #list that will be sent to the parser
+        self.listToShow = list()  #list that will be shown to the user
+        self.lastRes = list       #list containing the previus result
 
     def update(self):
-        temp = ''.join(self.listToParse)
+        temp = ''.join(self.listToShow)
         self.calcDisplay.setText(temp)
 
     def deleteList(self):
         self.listToParse = []
-        print (self.listToParse)
+        self.listToShow = []
         self.update()
 
     def resetList(self):
@@ -209,33 +240,39 @@ class Ui_Calculator(object):
 
     def backSpace(self):
         self.listToParse = self.listToParse[:-1]
+        self.listToShow = self.listToShow[:-1]
         self.update()
 
     def negate(self):
         self.listToParse.insert(0, '-')
+        self.listToShow.insert(0, '-')
         self.update()
 
     def calculate(self):
-        print(self.listToParse)
-
+        #print(self.listToParse)
         self.lastRes = lib.evaluate(self.listToParse)
         var = ''.join(self.lastRes)
-        self.calcDisplay.setText(var)
-
-
-
+        self.deleteList()
+        self.calcDisplayRes.setText(var)
 
     def setStr(self, a):
         self.listToParse.append(a)
-        self.update()
+        if a == "$":
+            self.listToShow.append("√")
+        else:
+            self.listToShow.append(a)
 
+        self.update()
 
     def retranslateUi(self, Calculator):
         _translate = QtCore.QCoreApplication.translate
         Calculator.setWindowTitle(_translate("Calculator", "MainWindow"))
-        self.label.setText(_translate("Calculator", "Some Text"))
-        self.calcDisplay.setText(_translate("Calculator", "sample test 05 + 6 / 15"))
-        self.label_2.setText(_translate("Calculator", "More Text"))
+        self.calcDisplay.setText(_translate("Calculator", "0"))
+        self.calcDisplayRes.setText(_translate("Calculator", "0"))
+        pixmap = QPixmap("logo.png")
+        pixmap = pixmap.scaledToWidth(200)
+        self.Logo.setPixmap(pixmap)
+        self.Logo.show()
         self.btn5.setText(_translate("Calculator", "5"))
         self.btn5.setShortcut(_translate("Calculator", "5"))
         self.btnSqrt.setText(_translate("Calculator", "√"))
@@ -262,7 +299,7 @@ class Ui_Calculator(object):
         self.btn6.setShortcut(_translate("Calculator", "6"))
         self.btnMult.setText(_translate("Calculator", "*"))
         self.btnMult.setShortcut(_translate("Calculator", "*"))
-        self.btnExpon.setText(_translate("Calculator", "x^n"))
+        self.btnExpon.setText(_translate("Calculator", "X^n"))
         self.btnReset.setText(_translate("Calculator", "Reset"))
         self.btnPoint.setText(_translate("Calculator", "."))
         self.btnPoint.setShortcut(_translate("Calculator", "., ,"))
@@ -279,12 +316,12 @@ class Ui_Calculator(object):
         self.btnDelete.setText(_translate("Calculator", "Delete"))
         self.btnDelete.setShortcut(_translate("Calculator", "Del"))
         self.menuMenu.setTitle(_translate("Calculator", "Menu"))
-        self.actionPolozka1.setText(_translate("Calculator", "polozka1"))
+        self.actionPolozka1.setText(_translate("Calculator", "Nápověda"))
+        self.actionAuto_i.setText(_translate("Calculator", "Autoři"))
 
 
 if __name__ == "__main__":
     import sys
-    lib = math_lib.MathLib()
     app = QtWidgets.QApplication(sys.argv)
     Calculator = QtWidgets.QMainWindow()
     ui = Ui_Calculator()
